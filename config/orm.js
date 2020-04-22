@@ -16,18 +16,19 @@ const orm = {
     insertOne: (name) => {
         connection.query ("INSERT INTO burgers (burger_name, devoured) VALUES ( ?, 0 )", [name], (err, res) => {
             if (err) throw err;
-           console.table(res.affectedRows + "entries created.");
+           console.table(res.affectedRows + " entries created.");
        })
 
     },
 
-    updateOne: () => {
-
+    updateOne: (devoured, id) => {
+        connection.query ( "UPDATE burgers SET devoured = ? WHERE id = ?", [devoured, id], (err, res) => {
+            if (err) throw err;
+            console.log ( res.affectedRows + " entries updated");
+        } );
     }
 
 
 }
-
-orm.selectAll();
 
 module.exports = orm;
