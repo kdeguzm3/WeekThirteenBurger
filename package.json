@@ -1,0 +1,25 @@
+{
+  "name": "WeekThirteenBurger",
+  "version": "1.0.0",
+  "description": "MVC Homework for Boot Camp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kdeguzm3/WeekThirteenBurger.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kdeguzm3/WeekThirteenBurger/issues"
+  },
+  "homepage": "https://github.com/kdeguzm3/WeekThirteenBurger#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^4.0.3",
+    "mysql": "^2.18.1"
+  }
+}
