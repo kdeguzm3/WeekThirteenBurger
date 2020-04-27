@@ -3,11 +3,11 @@ const pass = require('../../pass');
 
 //mysql connection
 const connection = mysql.createConnection({
-    host: "localhost",
+    host: "i2cpbxbi4neiupid.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     port: 3306,
-    user: "root",
-    password: pass,
-    database: "burgers_db"
+    user: "	v7finmmqedixgjfl",
+    password: "t91vw9simatps62j",
+    database: "fs1q43ivuzz9ybvm"
 
 });
 
