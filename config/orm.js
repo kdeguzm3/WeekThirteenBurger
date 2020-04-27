@@ -7,24 +7,23 @@ connection.connect(err => {
 
 const orm = {
 
-    selectAll: () => {
+    selectAll: (callback) => {
         connection.query ("SELECT * FROM burgers", (err, res) => {
              if (err) throw err;
-            console.table(res);
+            callback(res);
         })
     },
-    insertOne: (name) => {
+    insertOne: (name, callback) => {
         connection.query ("INSERT INTO burgers (burger_name, devoured) VALUES ( ?, 0 )", [name], (err, res) => {
-            if (err) throw err;
-           console.table(res.affectedRows + " entries created.");
+           callback(res);
        })
 
     },
 
-    updateOne: (devoured, id) => {
+    updateOne: (id, devoured, callback) => {
         connection.query ( "UPDATE burgers SET devoured = ? WHERE id = ?", [devoured, id], (err, res) => {
             if (err) throw err;
-            console.log ( res.affectedRows + " entries updated");
+            callback (res);
         } );
     }
 

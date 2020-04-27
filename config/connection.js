@@ -9,7 +9,8 @@ const connection = mysql.createConnection({
     password: pass,
     database: "burgers_db"
 
-})
+});
+
 
 //exports
 module.exports = connection;

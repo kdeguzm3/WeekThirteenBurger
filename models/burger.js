@@ -1,5 +1,22 @@
 const { selectAll, insertOne, updateOne } = require ('../config/orm');
 
-let burger = {};
+let burger = {
+    all: function(cb) {
+        selectAll(function(res) {
+          cb(res);
+        });
+      },
+
+      create: function(burgerName, cb) {
+        insertOne(burgerName, function(res) {
+          cb(res);
+        });
+      },
+      update: function(id, devoured, cb) {
+        updateOne(id, devoured, function(res) {
+          cb(res);
+        });
+    }
+};
 
 module.exports = burger;
