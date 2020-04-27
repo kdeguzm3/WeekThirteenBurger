@@ -7,8 +7,8 @@ let burger = {
         });
       },
 
-      create: function(burgerName, cb) {
-        insertOne(burgerName, function(res) {
+      create: function(burgerName, devoured, cb) {
+        insertOne(burgerName, devoured, function(res) {
           cb(res);
         });
       },

@@ -13,8 +13,8 @@ const orm = {
             callback(res);
         })
     },
-    insertOne: (name, callback) => {
-        connection.query ("INSERT INTO burgers (burger_name, devoured) VALUES ( ?, 0 )", [name], (err, res) => {
+    insertOne: (name, devoured, callback) => {
+        connection.query ("INSERT INTO burgers (burger_name, devoured) VALUES ( ?, ? )", [name, devoured], (err, res) => {
            callback(res);
        })
 

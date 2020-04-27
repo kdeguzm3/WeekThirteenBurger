@@ -16,20 +16,19 @@ router.get("/", function(req, res) {
   });
 });
 
-/*
-router.post("/api/burgers", function(req, res) {
-  burger.create([
-    "name", "sleepy"
-  ], [
-    req.body.name, req.body.sleepy
-  ], function(result) {
+
+router.post("/api/burger", function(req, res) {
+  burger.create(
+    req.body.name,
+    req.body.devoured,
+    function(result) {
     // Send back the ID of the new quote
     res.json({ id: result.insertId });
   });
 });
-*/
 
-router.put("/api/cats/:id", function(req, res) {
+
+router.put("/api/burger/:id", function(req, res) {
   var condition = req.params.id;
 
   burger.update(condition, 1, function(result) {

@@ -3,7 +3,7 @@ $(function() {
       var id = $(this).data("id");
 
       // Send the PUT request.
-      $.ajax("/api/cats/" + id, {
+      $.ajax("/api/burger/" + id, {
         type: "PUT",
         data: { devoured: true }
       }).then(
@@ -19,37 +19,22 @@ $(function() {
       // Make sure to preventDefault on a submit event.
       event.preventDefault();
   
-      var newCat = {
-        name: $("#ca").val().trim(),
-        sleepy: $("[name=sleepy]:checked").val().trim()
+      var newBurger = {
+        name: $("#bg").val().trim(),
+        devoured: $("[name=devoured]:checked").val().trim()
       };
   
       // Send the POST request.
-      $.ajax("/api/cats", {
+      $.ajax("/api/burger", {
         type: "POST",
-        data: newCat
+        data: newBurger
       }).then(
         function() {
-          console.log("created new cat");
+          console.log("created new burger");
           // Reload the page to get the updated list
           location.reload();
         }
       );
     });
-  
-    $(".delete-cat").on("click", function(event) {
-      var id = $(this).data("id");
-  
-      // Send the DELETE request.
-      $.ajax("/api/cats/" + id, {
-        type: "DELETE"
-      }).then(
-        function() {
-          console.log("deleted cat", id);
-          // Reload the page to get the updated list
-          location.reload();
-        }
-      );
-    });
-  });
+});
   
